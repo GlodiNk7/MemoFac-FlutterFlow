@@ -1,0 +1,85 @@
+{
+  "name": "MemoFac",
+  "description": "Gestionnaire de devoirs moderne pour \u00e9tudiants",
+  "theme": {
+    "primaryColor": "#1E88E5",
+    "secondaryColor": "#90CAF9",
+    "accentColor": "#42A5F5",
+    "backgroundColor": "#F5F5F5",
+    "darkMode": true,
+    "buttonRadius": 16,
+    "cardRadius": 12
+  },
+  "pages": [
+    {
+      "name": "Dashboard",
+      "widgets": [
+        "AppBar",
+        "StatsContainer",
+        "UpcomingTasksList",
+        "FAB_Add"
+      ]
+    },
+    {
+      "name": "ListeDevoirs",
+      "widgets": [
+        "AppBar",
+        "DevoirsListView",
+        "EditDeleteSwipeActions"
+      ]
+    },
+    {
+      "name": "AjouterDevoir",
+      "widgets": [
+        "AppBar",
+        "FormFields",
+        "SaveButton"
+      ]
+    },
+    {
+      "name": "Profil",
+      "widgets": [
+        "AppBar",
+        "UserInfoCard",
+        "LogoutButton"
+      ]
+    },
+    {
+      "name": "Param\u00e8tres",
+      "widgets": [
+        "AppBar",
+        "ThemeSwitch",
+        "NotificationSwitch"
+      ]
+    }
+  ],
+  "firestore": {
+    "collections": [
+      {
+        "name": "devoirs",
+        "fields": {
+          "userId": "String",
+          "title": "String",
+          "subject": "String",
+          "dueDate": "Timestamp",
+          "description": "String",
+          "status": "String"
+        }
+      },
+      {
+        "name": "users",
+        "fields": {
+          "userId": "String",
+          "name": "String",
+          "email": "String"
+        }
+      }
+    ]
+  },
+  "authentication": {
+    "enabled": true,
+    "providers": [
+      "email"
+    ]
+  }
+}
